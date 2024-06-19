@@ -1,0 +1,48 @@
+﻿@model SAuthViewModel
+@{
+    ViewData["Title"] = "Register1";
+}
+
+<center><h2 style="background-color:lightpink;">Register</h2></center>
+
+<form asp-action="Register1" asp-controller="SAuth" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" placeholder="Name" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="LastName"></label>
+        <input asp-for="LastName" class="form-control" placeholder="Last Name" />
+        <span asp-validation-for="LastName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="UserEmail"></label>
+        (Username)
+        <input asp-for="UserEmail" class="form-control" placeholder="abc@gmail.com" />
+        <span asp-validation-for="UserEmail" class="text-danger"></span>
+    </div>
+
+     <div class="form-group">
+        <label asp-for="Password"></label>
+        (Password must be at least 6 charachters.)
+        <input asp-for="Password" class="form-control" placeholder="Password" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+
+    <div>
+    <label asp-for="Role"></label>
+    : User Role
+    <input asp-for="Role" class="form-control" type="hidden"  value="UserRole" />
+    <span asp-validation-for="Role" class="text-danger"></span>
+    </div>
+
+    <div>
+    <button type="submit" class="btn btn-primary">Register</button>
+    </div>
+</form>

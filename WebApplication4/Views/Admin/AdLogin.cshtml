@@ -1,0 +1,27 @@
+﻿@model WebApplication4.Models.AdminViewModel
+@{
+    ViewData["Title"] = "AdLogin";
+}
+
+<center>
+    <h2 style="background-color:lightpink;">Administrator Login</h2>
+</center>
+
+<form asp-action="AdLogin" asp-controller="Admin" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+ 
+    <div class="form-group">
+        <label asp-for="AdUsername"></label>
+        <input asp-for="AdUsername" class="form-control" />
+        <span asp-validation-for="AdUsername" class="text-danger"></span>
+    </div>
+
+     <div class="form-group">
+        <label asp-for="AdPassword"></label>
+        <input asp-for="AdPassword" class="form-control" />
+        <span asp-validation-for="AdPassword" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Login</button>
+</form>
